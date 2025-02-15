@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Slang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Learn Slang Like a Pro!</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#quiz">Daily Quiz</a>
+            <a href="#progress">Progress</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Search Section -->
+        <section id="search">
+            <h2>Search Slang Terms</h2>
+            <input type="text" id="searchInput" placeholder="Enter a slang term...">
+            <button id="searchButton">Search</button>
+            <div id="searchResults"></div>
+        </section>
+
+        <!-- Random Slang Section -->
+        <section id="randomSlang">
+            <h2>Random Slang Word</h2>
+            <button id="randomSlangButton">Generate Random Slang</button>
+            <div id="randomSlangResult"></div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2>Daily Slang Quiz</h2>
+            <div id="quizQuestion"></div>
+            <input type="text" id="quizAnswer" placeholder="Your answer...">
+            <button id="submitQuiz">Submit</button>
+            <div id="quizFeedback"></div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress">
+            <h2>Your Progress</h2>
+            <p>Streak: <span id="streakCount">0</span> days</p>
+            <p>Points: <span id="pointsCount">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Learn Slang. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
