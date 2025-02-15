@@ -1,19 +1,16 @@
 export interface SlangWord {
+  id: number;
   word: string;
   definition: string;
   example: string;
-  category: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  points: number;
 }
 
-export interface User {
-  name: string;
-  score: number;
+export interface UserProgress {
+  points: number;
   streak: number;
   lastPlayed: string;
-}
-
-export interface QuizQuestion {
-  word: SlangWord;
-  options: string[];
-  correctAnswer: string;
+  wordsLearned: number[];
+  dailyProgress: { date: string; words: number }[];
 }
