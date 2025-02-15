@@ -15,6 +15,11 @@ const slangTerms = [
     definition: "extremely cool or impressive",
     example: "That comeback was savage.",
   },
+  {
+    term: "og",
+    definition: "original, one of the first of the group",
+    example: "He's an og.",
+  },
 ];
 
 const quizzes = [
