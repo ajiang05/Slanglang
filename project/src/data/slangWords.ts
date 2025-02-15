@@ -82,10 +82,14 @@ export const slangWords = [
     word: "gassed",
     definition: "To be really happy or excited",
     example: "I was so gassed when I got the job",
+    difficulty: "hard",
+    points: 10,
   },
   {
     id: 11,
     word: "peng",
     definition: "Something that is really good or attractive",
+    difficulty: "hard",
+    points: 10,
   },
 ] as const;

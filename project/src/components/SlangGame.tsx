@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useStore } from '../store/useStore';
-import { slangWords } from '../data/slangWords';
-import { Trophy, Zap } from 'lucide-react';
+import React, { useState } from "react";
+import { useStore } from "../store/useStore";
+import { slangWords } from "../data/slangWords";
+import { Trophy, Zap } from "lucide-react";
 
 export const SlangGame: React.FC = () => {
   const { progress, addPoints, updateStreak, addLearnedWord } = useStore();
-  const [currentWord, setCurrentWord] = useState(() => 
-    slangWords[Math.floor(Math.random() * slangWords.length)]
+  const [currentWord, setCurrentWord] = useState(
+    () => slangWords[Math.floor(Math.random() * slangWords.length)]
   );
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -27,7 +27,7 @@ export const SlangGame: React.FC = () => {
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-2">
           <Trophy className="text-yellow-500" />
-          <span className="font-bold">{progress.points} points</span>
+          <span className="font-bold">{progress.points} Aura points</span>
         </div>
         <div className="flex items-center gap-2">
           <Zap className="text-orange-500" />
@@ -51,7 +51,7 @@ export const SlangGame: React.FC = () => {
         onClick={handleNextWord}
         className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors"
       >
-        {showAnswer ? 'Next Word' : 'Reveal'}
+        {showAnswer ? "Next Word" : "Reveal"}
       </button>
     </div>
   );

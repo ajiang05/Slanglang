@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import type { UserProgress } from '../types';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import type { UserProgress } from "../types";
 
 interface Store {
   progress: UserProgress;
@@ -15,20 +15,20 @@ export const useStore = create<Store>()(
       progress: {
         points: 0,
         streak: 0,
-        lastPlayed: '',
+        lastPlayed: "",
         wordsLearned: [],
-        dailyProgress: []
+        dailyProgress: [],
       },
       addPoints: (points) =>
         set((state) => ({
           progress: {
             ...state.progress,
-            points: state.progress.points + points
-          }
+            points: state.progress.points + points,
+          },
         })),
       updateStreak: () =>
         set((state) => {
-          const today = new Date().toISOString().split('T')[0];
+          const today = new Date().toISOString().split("T")[0];
           const lastPlayed = state.progress.lastPlayed;
           const isConsecutiveDay =
             new Date(today).getTime() - new Date(lastPlayed).getTime() ===
@@ -41,21 +41,21 @@ export const useStore = create<Store>()(
               lastPlayed: today,
               dailyProgress: [
                 ...state.progress.dailyProgress,
-                { date: today, words: 1 }
-              ]
-            }
+                { date: today, words: 1 },
+              ],
+            },
           };
         }),
       addLearnedWord: (wordId) =>
         set((state) => ({
           progress: {
             ...state.progress,
-            wordsLearned: [...state.progress.wordsLearned, wordId]
-          }
-        }))
+            wordsLearned: [...state.progress.wordsLearned, wordId],
+          },
+        })),
     }),
     {
-      name: 'slang-progress'
+      name: "slang-progress",
     }
   )
 );
